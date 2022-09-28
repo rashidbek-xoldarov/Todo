@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.site-form {
+  display: flex;
+  justify-content: center;
+}
+
+.form-input {
+  width: 300px;
+  margin-right: 20px;
+  padding: 20px 20px;
+  border: none;
+  background-color: rgb(246, 237, 237);
+  border-radius: 8px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-btn {
+  padding: 2px 15px;
+  border: none;
+  background-color: rgb(185, 185, 229);
+  border-radius: 6px;
+}
+
+.second-form {
+  width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.new-label {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  background: #ffffff;
+  box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.new-label:first-child {
+  margin-top: 20px;
+}
+
+.new-label:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.btn-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.edit-btn {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  background-image: url("./images/edit-img.svg");
+  border: none;
+  cursor: pointer;
+}
+
+.del-btn {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  background-color: transparent;
+  background-image: url("./images/del-img.svg");
+  border: none;
+  cursor: pointer;
+}
