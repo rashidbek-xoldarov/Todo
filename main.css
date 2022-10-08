@@ -94,3 +94,24 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.wrapper-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.complited,
+.uncomplited,
+.deleted {
+  padding: 10px;
+  font-weight: 500;
+  border: none;
+  color: white;
+  background-color: darkmagenta;
+  border-radius: 8px;
+}

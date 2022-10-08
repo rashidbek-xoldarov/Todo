@@ -1,9 +1,15 @@
 const elForm = document.querySelector(".site-form");
 const elSecondForm = document.querySelector(".second-form");
 const elInput = document.querySelector(".form-input");
+const complitedBtn = document.querySelector(".complited");
+const unComplitedBtn = document.querySelector(".uncomplited");
+const deletedBtn = document.querySelector(".deleted");
+const complitedText = document.querySelector(".complited-text");
+const unComplitedText = document.querySelector(".uncomplited-text");
+const deletedText = document.querySelector(".deleted-text");
 
 let list = [];
-
+let deletedArr = [];
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
@@ -55,6 +61,7 @@ function renderUi(arr) {
       evt.preventDefault();
       const delId = evt.target.dataset.delId;
       const indexDeletedItem = list.findIndex((item) => delId == item.id);
+      deletedArr.push(arr[indexDeletedItem]);
       list.splice(indexDeletedItem, 1);
       renderUi(list);
     });
@@ -75,3 +82,39 @@ function renderUi(arr) {
     });
   });
 }
+
+complitedBtn.addEventListener("click", function (evt) {
+  complitedText.innerHTML = "";
+  let complitedArr = list.filter((item) => item.isCheked === true);
+
+  complitedArr.forEach((item) => {
+    const newP = document.createElement("p");
+    newP.textContent = item.title;
+    complitedText.appendChild(newP);
+  });
+});
+
+unComplitedBtn.addEventListener("click", function (evt) {
+  unComplitedText.innerHTML = "";
+  let unComplitedArr = list.filter((item) => item.isCheked !== true);
+
+  unComplitedArr.forEach((item) => {
+    const newP = document.createElement("p");
+    newP.textContent = item.title;
+    unComplitedText.appendChild(newP);
+  });
+});
+
+deletedBtn.addEventListener("click", function (evt) {
+  deletedText.innerHTML = "";
+
+  if (deletedArr.length > 0) {
+    deletedArr.forEach((item) => {
+      const newP = document.createElement("p");
+      newP.textContent = item.title;
+      deletedText.appendChild(newP);
+    });
+  } else {
+    deletedText.textContent = "No deleted item";
+  }
+});
