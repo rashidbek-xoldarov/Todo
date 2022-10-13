@@ -57,6 +57,16 @@ function renderUi(arr) {
     newLabel.append(newIput, newP, span);
     elSecondForm.appendChild(newLabel);
 
+    complitedBtn.textContent = list.filter(
+      (item) => item.isCheked === true
+    ).length;
+
+    unComplitedBtn.textContent = list.filter(
+      (item) => item.isCheked === false
+    ).length;
+
+    deletedBtn.textContent = deletedArr.length;
+
     delBtn.addEventListener("click", function (evt) {
       evt.preventDefault();
       const delId = evt.target.dataset.delId;
